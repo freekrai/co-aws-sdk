@@ -1,0 +1,30 @@
+{
+  "name": "co-aws-sdk",
+  "version": "0.0.2",
+  "description": "Wrap AWS sdk for generator with co",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/booxood/co-aws-sdk.git"
+  },
+  "keywords": [
+    "aws",
+    "sdk",
+    "s3",
+    "co",
+    "generator"
+  ],
+  "author": "Liucw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/booxood/co-aws-sdk/issues"
+  },
+  "homepage": "https://github.com/booxood/co-aws-sdk",
+  "dependencies": {
+    "aws-sdk": "^2.1.9",
+    "thunkify": "^2.1.2"
+  }
+}
