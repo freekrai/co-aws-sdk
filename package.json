@@ -1,6 +1,6 @@
 {
   "name": "co-aws-sdk",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Wrap AWS sdk for generator with co",
   "main": "index.js",
   "scripts": {
