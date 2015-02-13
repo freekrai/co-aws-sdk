@@ -26,16 +26,18 @@ function CoAWS() {
 var services = ['S3'];
 
 services.forEach(function(service) {
-    CoAWS[service] = function() {
-        var serviceInstance = new AWS[service]();
-        var operations = serviceInstance.api.operations;
+  CoAWS[service] = function() {
+    var serviceInstance = new AWS[service]();
+    var wrapService = {};
 
-        assert(typeof operations === 'object', 'AWS sdk "' + service + '" api no operations.' )
-
-        Object.keys(operations).forEach(function(key) {
-            serviceInstance[key] = thunkify(serviceInstance[key])
-        });
-
-        return serviceInstance;
+    for(var key in serviceInstance){
+      // if(key == 'constructor') continue;
+      if(typeof serviceInstance[key] == 'function'){
+        wrapService[key] = thunkify(serviceInstance[key].bind(serviceInstance));
+      } else {
+        wrapService[key] = serviceInstance[key];
+      }
     }
+    return wrapService;
+  }
 });
