@@ -23,7 +23,7 @@ function CoAWS() {
  * Wrap AWS services sdk.
  */
 
-var services = ['S3'];
+var services = ['S3', 'SQS'];
 
 services.forEach(function(service) {
   CoAWS[service] = function() {
